@@ -8,8 +8,6 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import BrokenImageIcon from '@mui/icons-material/BrokenImage';
-import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import AppSettingsAltIcon from '@mui/icons-material/AppSettingsAlt';
@@ -131,29 +129,16 @@ const Sidebar = () => {
               Collections
             </Typography>
             <Item
-              title="Collected Waste"
-              to="/collectedWaste"
+              title="Collected Wastes"
+              to="/collected-waste"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
-            <Item
-              title="Biodegradable"
-              to="/biodegradable"
-              icon={< BrokenImageIcon  />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            
+       
 
-            <Item
-              title="Non-Biodegradable"
-              to="/contacts"
-              icon={<DeleteSweepIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+
             
 
             <Typography

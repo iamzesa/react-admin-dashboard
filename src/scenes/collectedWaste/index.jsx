@@ -1,55 +1,55 @@
-import { Box } from "@mui/material";
+import { Box, Button, Link } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
+import { mockDataCollectedWastes } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
+// Import the pop-up content
+import { Link as RouterLink } from "react-router-dom"; // Import RouterLink
 
-const Contacts = () => {
- 
+
+
+
+const CollectedWaste = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  
+
+    
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
+    { field: "qrCode", headerName: "Qr Code" },
     {
-      field: "name",
-      headerName: "Name",
+      field: "barangay",
+      headerName: "Barangay",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
-      field: "age",
-      headerName: "Age",
-      type: "number",
+      field: "wasteType",
+      headerName: "Waste Type",
       headerAlign: "left",
       align: "left",
-    },
-    {
-      field: "phone",
-      headerName: "Phone Number",
       flex: 1,
     },
     {
-      field: "email",
-      headerName: "Email",
+      field: "source",
+      headerName: "Source",
       flex: 1,
     },
     {
-      field: "address",
-      headerName: "Address",
+      field: "weight",
+      headerName: "Weight",
       flex: 1,
     },
     {
-      field: "city",
-      headerName: "City",
+      field: "time",
+      headerName: "Time",
       flex: 1,
     },
     {
-      field: "zipCode",
-      headerName: "Zip Code",
+      field: "date",
+      headerName: "Date",
       flex: 1,
     },
   ];
@@ -57,11 +57,11 @@ const Contacts = () => {
   return (
     <Box m="20px">
       <Header
-        title="CONTACTS"
-        subtitle="List of Contacts for Future Reference"
+        title="Collected Wastes"
+        subtitle="List of Waste Collection from each Barangays"
       />
       <Box
-        m="40px 0 0 0"
+        m="20px 0 0 0"
         height="75vh"
         sx={{
           "& .MuiDataGrid-root": {
@@ -93,10 +93,26 @@ const Contacts = () => {
         }}
         
       >
+        
 
-
+         {/* Add the "Add" button */}
+          <Link
+          to="/add-waste"
+          component={RouterLink}
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <Button
+            variant="contained"
+            color="primary"
+            style={{
+              backgroundColor: colors.greenAccent[700],
+            }}
+          >
+            Add Collection Manually
+          </Button>
+        </Link>
         <DataGrid
-          rows={mockDataContacts}
+          rows={mockDataCollectedWastes}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
           pageSize={10} 
@@ -108,4 +124,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default CollectedWaste;

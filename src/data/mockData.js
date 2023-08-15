@@ -75,6 +75,31 @@ export const mockDataBiodegradable = [
   },
 ];
 
+export const mockDataCollectedWastes = [
+{
+  id: 1,
+  qrCode: "MOBOD1",
+  barangay: "MOBOD",
+  wasteType: "Non-Biodegredable",
+  source: "Residential",
+  weight: "3kg",
+  time: "1:00pm",
+  date: "10/10/2023",
+},
+{
+  id: 2,
+  qrCode: "MOBOD2",
+  barangay: "MOBOD",
+  wasteType: "Biodegredable",
+  source: "Residential",
+  weight: "4kg",
+  time: "1:10pm",
+  date: "10/10/2023",
+}
+];
+
+
+
 export const mockDataContacts = [
   {
     id: 1,
